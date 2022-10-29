@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: To create a file
+- text: To overwrite an existing file
+- text: To output text to the console
+- text: To delete a file
+- text: To write text to a file
+- text: To add text to already existing file content
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9712#comment
+status: Solved
+record: -1
+local_check: false

@@ -1,0 +1,94 @@
+type: edu
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    package encryptdecrypt
+    //a b c d e f g h i j k l m n o p q r s t u v w x y z
+    var numLetter = 0
+    var position = 0
+    var messageCrypted = ""
+    fun main() {
+        val dictionary = "abcdefghijklmnopqrstuvwxyz"
+        val dictionary_Reversed = dictionary.reversed()
+        val message = "we found a treasure!"
+        for (i in message) {
+            position = 0
+            if (i !in dictionary){
+                messageCrypted += i
+                continue
+            }
+            for (letter in dictionary) {
+                if (i == letter) {
+                    messageCrypted += dictionary_Reversed[position]
+                    break
+                } else {
+                    position++
+                    continue
+                }
+            }
+        }
+        println(messageCrypted)
+        for (i in messageCrypted) {
+            if (i !in dictionary){
+                print(i)
+                continue
+            } else {
+                print("#")
+            }
+        }
+    }
+  learner_created: false
+- name: test/EncryptDecryptTest.java
+  visible: false
+  text: |
+    import org.hyperskill.hstest.stage.StageTest;
+    import org.hyperskill.hstest.testcase.SimpleTestCase;
+
+    import java.util.List;
+
+    public class EncryptDecryptTest extends StageTest {
+
+        @Override
+        public List<SimpleTestCase> generate() {
+            return List.of(
+                new SimpleTestCase(
+                    "enc\n" +
+                        "Welcome to hyperskill!\n" +
+                        "5",
+                    "\\jqhtrj%yt%m~ujwxpnqq&"),
+                new SimpleTestCase(
+                    "enc\n" +
+                        "Hello\n" +
+                        "0",
+                    "Hello"),
+                new SimpleTestCase(
+                    "enc\n" +
+                        "012345678\n" +
+                        "1",
+                    "123456789"),
+                new SimpleTestCase(
+                    "dec\n" +
+                        "\\jqhtrj%yt%m~ujwxpnqq&\n" +
+                        "5",
+                    "Welcome to hyperskill!"),
+                new SimpleTestCase(
+                    "dec\n" +
+                        "Hello\n" +
+                        "0",
+                    "Hello"),
+                new SimpleTestCase(
+                    "dec\n" +
+                        "222233334444\n" +
+                        "1",
+                    "111122223333")
+            );
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/21968#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Tue, 25 Oct 2022 11:44:52 UTC
+record: 3

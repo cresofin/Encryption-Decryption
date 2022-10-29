@@ -1,0 +1,27 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    // TODO: provide three functions here
+
+    fun generate(functionName: String): (Int) -> Int {
+        // TODO: provide implementation here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6000#comment
+status: Failed
+feedback:
+  message: |
+    Compilation error
+    main.kt:3:1: error: conflicting overloads: public fun main(): Unit defined in root package in file main.kt, public fun main(): Unit defined in root package in file main.kt
+    fun main() {
+    ^
+    main.kt:9:1: error: conflicting overloads: public fun main(): Unit defined in root package in file main.kt, public fun main(): Unit defined in root package in file main.kt
+    fun main() {
+    ^
+    main.kt:13:16: error: unresolved reference: generate
+        val func = generate(name)
+                   ^
+  time: Wed, 26 Oct 2022 11:28:37 UTC
+record: -1
